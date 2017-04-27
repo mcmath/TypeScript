@@ -254,6 +254,10 @@ interface DataView {
     readonly [Symbol.toStringTag]: "DataView";
 }
 
+interface TypedArray {
+    readonly [Symbol.toStringTag]: "Int8Array" | "Uint8Array" | "Uint8ClampedArray" | "Int16Array" | "Uint16Array" | "Int32Array" | "Uint32Array" | "Float32Array" | "Float64Array";
+}
+
 /**
  * A typed array of 8-bit integer values. The contents are initialized to 0. If the requested
  * number of bytes could not be allocated an exception is raised.
@@ -267,7 +271,7 @@ interface Int8Array {
  * requested number of bytes could not be allocated an exception is raised.
  */
 interface Uint8Array {
-    readonly [Symbol.toStringTag]: "UInt8Array";
+    readonly [Symbol.toStringTag]: "Uint8Array";
 }
 
 /**

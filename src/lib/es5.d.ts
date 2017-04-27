@@ -1621,9 +1621,9 @@ interface TypedArray {
      * @param thisArg An object to which the this keyword can refer in the callbackfn function.
      * If thisArg is omitted, undefined is used as the this value.
      */
-    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): this;
-    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): this;
-    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): this;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): TypedArray;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): TypedArray;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): TypedArray;
 
     /**
      * Returns the value of the first element in the array where predicate is true, and undefined
@@ -1698,9 +1698,9 @@ interface TypedArray {
      * @param thisArg An object to which the this keyword can refer in the callbackfn function.
      * If thisArg is omitted, undefined is used as the this value.
      */
-    map(callbackfn: (this: void, value: number, index: number, array: this) => number): this;
-    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): this;
-    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): this;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): TypedArray;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): TypedArray;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): TypedArray;
 
     /**
      * Calls the specified callback function for all the elements in an array. The return value of
@@ -1767,7 +1767,7 @@ interface TypedArray {
      * @param start The beginning of the specified portion of the array.
      * @param end The end of the specified portion of the array.
      */
-    slice(start?: number, end?: number): this;
+    slice(start?: number, end?: number): TypedArray;
 
     /**
      * Determines whether the specified callback function returns true for any element of an array.
@@ -1794,7 +1794,7 @@ interface TypedArray {
      * @param begin The index of the beginning of the array.
      * @param end The index of the end of the array.
      */
-    subarray(begin: number, end?: number): this;
+    subarray(begin: number, end?: number): TypedArray;
 
     /**
      * Converts a number to a string by using the current locale.
@@ -1814,6 +1814,43 @@ interface TypedArray {
  * number of bytes could not be allocated an exception is raised.
  */
 interface Int8Array extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Int8Array;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Int8Array;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Int8Array;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Int8Array;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Int8Array;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Int8Array;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Int8Array;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Int8Array;
 }
 
 interface Int8ArrayConstructor {
@@ -1853,6 +1890,43 @@ declare const Int8Array: Int8ArrayConstructor;
  * requested number of bytes could not be allocated an exception is raised.
  */
 interface Uint8Array extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Uint8Array;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Uint8Array;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Uint8Array;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Uint8Array;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Uint8Array;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Uint8Array;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Uint8Array;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Uint8Array;
 }
 
 interface Uint8ArrayConstructor {
@@ -1892,6 +1966,43 @@ declare const Uint8Array: Uint8ArrayConstructor;
  * If the requested number of bytes could not be allocated an exception is raised.
  */
 interface Uint8ClampedArray extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Uint8ClampedArray;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Uint8ClampedArray;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Uint8ClampedArray;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Uint8ClampedArray;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Uint8ClampedArray;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Uint8ClampedArray;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Uint8ClampedArray;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Uint8ClampedArray;
 }
 
 interface Uint8ClampedArrayConstructor {
@@ -1931,6 +2042,43 @@ declare const Uint8ClampedArray: Uint8ClampedArrayConstructor;
  * requested number of bytes could not be allocated an exception is raised.
  */
 interface Int16Array extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Int16Array;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Int16Array;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Int16Array;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Int16Array;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Int16Array;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Int16Array;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Int16Array;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Int16Array;
 }
 
 interface Int16ArrayConstructor {
@@ -1970,6 +2118,43 @@ declare const Int16Array: Int16ArrayConstructor;
  * requested number of bytes could not be allocated an exception is raised.
  */
 interface Uint16Array extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Uint16Array;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Uint16Array;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Uint16Array;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Uint16Array;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Uint16Array;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Uint16Array;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Uint16Array;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Uint16Array;
 }
 
 interface Uint16ArrayConstructor {
@@ -2009,6 +2194,43 @@ declare const Uint16Array: Uint16ArrayConstructor;
  * requested number of bytes could not be allocated an exception is raised.
  */
 interface Int32Array extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Int32Array;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Int32Array;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Int32Array;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Int32Array;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Int32Array;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Int32Array;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Int32Array;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Int32Array;
 }
 
 interface Int32ArrayConstructor {
@@ -2048,6 +2270,43 @@ declare const Int32Array: Int32ArrayConstructor;
  * requested number of bytes could not be allocated an exception is raised.
  */
 interface Uint32Array extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Uint32Array;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Uint32Array;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Uint32Array;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Uint32Array;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Uint32Array;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Uint32Array;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Uint32Array;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Uint32Array;
 }
 
 interface Uint32ArrayConstructor {
@@ -2087,6 +2346,43 @@ declare const Uint32Array: Uint32ArrayConstructor;
  * of bytes could not be allocated an exception is raised.
  */
 interface Float32Array extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Float32Array;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Float32Array;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Float32Array;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Float32Array;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Float32Array;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Float32Array;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Float32Array;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Float32Array;
 }
 
 interface Float32ArrayConstructor {
@@ -2126,6 +2422,43 @@ declare const Float32Array: Float32ArrayConstructor;
  * number of bytes could not be allocated an exception is raised.
  */
 interface Float64Array extends TypedArray {
+    /**
+     * Returns the elements of an array that meet the condition specified in a callback function.
+     * @param callbackfn A function that accepts up to three arguments. The filter method calls
+     * the callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any): Float64Array;
+    filter(callbackfn: (this: void, value: number, index: number, array: this) => any, thisArg: undefined): Float64Array;
+    filter<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => any, thisArg: Z): Float64Array;
+
+    /**
+     * Calls a defined callback function on each element of an array, and returns an array that
+     * contains the results.
+     * @param callbackfn A function that accepts up to three arguments. The map method calls the
+     * callbackfn function one time for each element in the array.
+     * @param thisArg An object to which the this keyword can refer in the callbackfn function.
+     * If thisArg is omitted, undefined is used as the this value.
+     */
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number): Float64Array;
+    map(callbackfn: (this: void, value: number, index: number, array: this) => number, thisArg: undefined): Float64Array;
+    map<Z>(callbackfn: (this: Z, value: number, index: number, array: this) => number, thisArg: Z): Float64Array;
+
+    /**
+     * Returns a section of an array.
+     * @param start The beginning of the specified portion of the array.
+     * @param end The end of the specified portion of the array.
+     */
+    slice(start?: number, end?: number): Float64Array;
+
+    /**
+     * Gets a new Int8Array view of the ArrayBuffer store for this array, referencing the elements
+     * at begin, inclusive, up to end, exclusive.
+     * @param begin The index of the beginning of the array.
+     * @param end The index of the end of the array.
+     */
+    subarray(begin: number, end?: number): Float64Array;
 }
 
 interface Float64ArrayConstructor {
